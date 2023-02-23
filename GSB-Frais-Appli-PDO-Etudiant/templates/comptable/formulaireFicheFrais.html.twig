@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head lang='fr'>
+        <title>Filtrer fiche de frais</title>
+        <meta charset="utf-8">
+        <!-- importer le fichier de style -->
+    </head>
+    <body>
+        <div id="container">
+            <form action="./FormulaireValiderFicheFrais" method="POST">
+              </br>
+
+              <label><b>1. Mois</b></label>
+              <select name="mois" id="mois-select">
+                  <option value="">--Choisir le mois--</option>
+                  <option value="Janvie">Janvier</option>
+                  <option value="Fevrie">Fevrier</option>
+                  <option value="Mars">Mars</option>
+                  <option value="Avril">Avril</option>
+                  <option value="Mai">Mai</option>
+                  <option value="Juin">Juin</option>
+                  <option value="Juille">Juillet</option>
+                  <option value="Aout">Aout</option>
+                  <option value="Septem">Septembre</option>             
+                  <option value="Octobr">Octobre</option> 
+                  <option value="Novemb">Novembre</option>
+                  <option value="Decemb">Decembre</option>
+              </select>
+              </br>
+              </br>
+              <label><b>2. Identifiant Visiteur</b></label>
+              <input type="text" placeholder="Identifiant..." name="idVisiteur" required>
+
+              <input type="submit" id='submit' value="Rechercher" >
+              <input type="reset" id='reset' value='Annuler' > 
+
+              <a class="text-purple" href="./Accueil">Retour</a>
+
+            </form>
+        </div>
+    </body>

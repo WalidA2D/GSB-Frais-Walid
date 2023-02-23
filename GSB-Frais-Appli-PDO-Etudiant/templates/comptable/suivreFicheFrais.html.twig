@@ -1,0 +1,65 @@
+<h1>Suivre fiche de frais</h1>
+
+<h2> <a href="./Accueil"> Retour</a> </h2>
+
+
+
+<table>
+<thead>
+    <tr>
+        <th>Id Visiteur</th>
+        <th>Mois </th>
+        <th>Nombre de justificatifs</th>
+        <th>Montant valide</th>
+        <th>Date modif</th>
+        {% if ficheFrais['idEtat'] != "RB"%}
+        <th>Etat</th>
+        {% endif %}
+    
+    </tr>
+</thead>
+<tbody>
+<tr>
+    <td>{{ ficheFrais['idVisiteur']}}</td>
+    <td>{{ ficheFrais['mois']}}</td>
+    <td>{{ ficheFrais['nbJustificatifs']}}</td>
+    <td>{{ ficheFrais['montantValide']}}</td>
+    <td>{{ ficheFrais['dateModif']}}</td>
+    {% if ficheFrais['idEtat'] != "RB"%}
+    <td><button><a href="/Comptable/SuivreFicheFrais/ModifierFicheFrais">{{ ficheFrais['idEtat']}}</a></button></td>
+    {% endif %}
+    {% if ficheFrais['idEtat'] == "VA"%}
+    <td>Mise en paiement</td>
+    <td><button><a href="/Comptable/SuivreFicheFrais/ModifierFicheFrais">Remboursée</a></button></td>
+    {% endif %}
+    {% if ficheFrais['idEtat'] == "RB"%}
+    <td><button><a href="/Comptable/SuivreFicheFrais/DetailFicheFrais">Détail</a></button></td>
+    <td>Fiche payée</td>
+    {% endif %}
+   
+    
+</tr>
+
+
+
+</tbody>
+<tfoot>
+    <tr>
+      <td><strong>RB</strong></td>
+      <td><strong>Remboursée</strong></td>
+    </tr>
+    <tr>
+      <td><strong>CL</strong></td>
+      <td><strong>Saisie clôturée</strong></td>
+    </tr>
+    <tr>
+      <td><strong>CR</strong></td>
+      <td><strong>Fiche créée, saisie en cours</strong></td>
+    </tr>
+    <tr>
+      <td><strong>VA</strong></td>
+      <td><strong>Validée et mise en paiement</strong></td>
+    </tr>
+</tfoot>
+
+</table>
