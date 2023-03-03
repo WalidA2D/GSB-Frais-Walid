@@ -87,7 +87,6 @@ INSERT INTO `Visiteur` (`id`, `nom`, `prenom`, `login`, `mdp`, `adresse`, `cp`, 
 INSERT INTO `FicheFrais` (`idVisiteur`, `mois`, `nbJustificatifs`, `montantValide`, `dateModif`, `idEtat`) VALUES
 ('a131', 'Janvier', 0, 52.00, '2022-03-12', 'RB'),
 ('d51', 'Mars', 3, 32.00, '2022-07-24', 'CR'),
-('d51', 'Mars', 14, 5.00, '2022-07-05', 'VA'),
 ('e5', 'Novembre', 5, 100.00, '2022-12-01', 'VA'),
 ('a93', 'Avril', 2, 45.00, '2022-05-29', 'CL');
    
