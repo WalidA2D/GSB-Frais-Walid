@@ -1,6 +1,6 @@
 <h1>Suivre fiche de frais</h1>
 
-<h2> <a href="./Accueil"> Retour</a> </h2>
+<h2> <a href="/Comptable/Accueil"> Retour</a> </h2>
 
 
 
@@ -25,14 +25,17 @@
     <td>{{ ficheFrais['nbJustificatifs']}}</td>
     <td>{{ ficheFrais['montantValide']}}</td>
     <td>{{ ficheFrais['dateModif']}}</td>
-    {% if ficheFrais['idEtat'] != "RB"%}
-    <td><button><a href="/Comptable/SuivreFicheFrais/ModifierFicheFrais">{{ ficheFrais['idEtat']}}</a></button></td>
+    {% if ficheFrais['idEtat'] == "CR" %}
+    <td>{{ ficheFrais['idEtat']}}</td>
     {% endif %}
-    {% if ficheFrais['idEtat'] == "VA"%}
+    {% if ficheFrais['idEtat'] == "CL" %}
+    <td><button><a href="/Comptable/SuivreFicheFrais/Modifier">{{ ficheFrais['idEtat']}}</a></button></td>
+    {% endif %}
+    {% if ficheFrais['idEtat'] == "VA" %}
     <td>Mise en paiement</td>
-    <td><button><a href="/Comptable/SuivreFicheFrais/ModifierFicheFrais">Remboursée</a></button></td>
+    <td><button><a href="/Comptable/SuivreFicheFrais/Rembourser">Remboursée</a></button></td>
     {% endif %}
-    {% if ficheFrais['idEtat'] == "RB"%}
+    {% if ficheFrais['idEtat'] == "RB" %}
     <td><button><a href="/Comptable/SuivreFicheFrais/DetailFicheFrais">Détail</a></button></td>
     <td>Fiche payée</td>
     {% endif %}
